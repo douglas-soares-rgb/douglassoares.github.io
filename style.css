@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Inter:wght@400;500&display=swap');
+
+:root {
+  --bg: #15130f;
+  --bg-raised: #1c1a15;
+  --text: #ede7dc;
+  --text-secondary: #948c7e;
+  --accent: #b5502a;
+  --border: rgba(237, 231, 220, 0.12);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+a { color: inherit; text-decoration: none; }
+a:hover { color: var(--accent); }
+
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 220px;
+  flex-shrink: 0;
+  padding: 3rem 1.75rem;
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.sidebar .name {
+  font-family: 'Fraunces', serif;
+  font-size: 22px;
+  font-weight: 500;
+  margin: 0 0 4px;
+}
+
+.sidebar .role {
+  color: var(--text-secondary);
+  font-size: 13px;
+  margin: 0 0 2.5rem;
+}
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sidebar nav a {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.sidebar nav a.active,
+.sidebar nav a:hover {
+  color: var(--text);
+}
+
+.sidebar .socials {
+  margin-top: auto;
+  display: flex;
+  gap: 14px;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+main {
+  flex: 1;
+  padding: 2.5rem;
+}
+
+/* Home grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-auto-rows: 140px;
+  gap: 10px;
+}
+
+.grid-item {
+  position: relative;
+  background: var(--bg-raised);
+  border-radius: 3px;
+  overflow: hidden;
+  display: block;
+}
+
+.grid-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.grid-item .label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 14px;
+  background: linear-gradient(to top, rgba(0,0,0,0.55), transparent);
+  font-family: 'Fraunces', serif;
+  font-size: 15px;
+}
+
+.grid-item .label span {
+  display: block;
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+
+.span-4 { grid-column: span 4; grid-row: span 3; }
+.span-2 { grid-column: span 2; grid-row: span 2; }
+.span-3 { grid-column: span 3; grid-row: span 1; }
+.span-6 { grid-column: span 6; grid-row: span 2; }
+
+/* Project page */
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.project-header h1 {
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+  font-size: 32px;
+  margin: 0 0 12px;
+  max-width: 480px;
+}
+
+.project-header p {
+  color: var(--text-secondary);
+  font-size: 15px;
+  max-width: 460px;
+  margin: 0;
+}
+
+.meta {
+  font-size: 13px;
+  color: var(--text-secondary);
+  min-width: 160px;
+}
+
+.meta div { margin-bottom: 8px; }
+.meta strong { color: var(--text); display: block; font-weight: 500; }
+
+.photo-series {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.photo-series figure {
+  margin: 0;
+}
+
+.photo-series img {
+  width: 100%;
+  display: block;
+  border-radius: 3px;
+}
+
+.photo-series figcaption {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-top: 10px;
+}
+
+/* About page */
+.about-content {
+  max-width: 560px;
+}
+
+.about-content h1 {
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+  font-size: 30px;
+  margin: 0 0 1.5rem;
+}
+
+.about-content p {
+  margin-bottom: 1.25rem;
+}
+
+@media (max-width: 720px) {
+  .layout { flex-direction: column; }
+  .sidebar { width: 100%; height: auto; position: relative; border-right: none; border-bottom: 1px solid var(--border); flex-direction: row; align-items: center; flex-wrap: wrap; padding: 1.5rem; }
+  .sidebar .name, .sidebar .role { margin: 0 1.5rem 0 0; }
+  .sidebar nav { flex-direction: row; gap: 14px; }
+  .sidebar .socials { margin-top: 0; margin-left: auto; }
+  .grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 160px; }
+  .span-4, .span-2, .span-3, .span-6 { grid-column: span 2; grid-row: span 2; }
+  .project-header { flex-direction: column; }
+}
