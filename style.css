@@ -213,3 +213,56 @@ main {
   .span-4, .span-2, .span-3, .span-6, .span-4-tall { grid-column: span 2; grid-row: span 2; }
   .project-header { flex-direction: column; }
 }
+
+
+/* Capa (home) */
+.sidebar .name a:hover { color: var(--text); }
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 2.5rem 3rem;
+  background:
+    linear-gradient(to top, rgba(10,9,7,0.78) 0%, rgba(10,9,7,0.25) 45%, rgba(10,9,7,0.15) 100%),
+    url('foto-capa.jpg') center / cover no-repeat,
+    radial-gradient(ellipse at 70% 28%, #6b5033 0%, #3a2d20 35%, #1a1612 75%);
+}
+
+.hero-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: flex-end;
+  gap: 32px;
+  padding: 2rem 3rem;
+  font-size: 14px;
+}
+
+.hero-nav a { color: var(--text); }
+.hero-nav a:hover { color: var(--accent); }
+
+.hero h1 {
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+  font-size: clamp(56px, 10vw, 128px);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  margin: 0;
+  color: var(--text);
+}
+
+.hero p {
+  margin: 20px 0 0;
+  font-size: 15px;
+  color: #c9c1b3;
+}
+
+@media (max-width: 720px) {
+  .hero { padding: 1.5rem; }
+  .hero-nav { padding: 1.5rem; gap: 18px; font-size: 13px; }
+}
