@@ -266,3 +266,215 @@ main {
   .hero { padding: 1.5rem; }
   .hero-nav { padding: 1.5rem; gap: 18px; font-size: 13px; }
 }
+
+
+/* Páginas com barra superior (Sobre e Contato) */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.75rem 3rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.topbar .name {
+  font-family: 'Fraunces', serif;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.topbar nav { display: flex; gap: 32px; font-size: 14px; }
+.topbar nav a { color: var(--text-secondary); }
+.topbar nav a.active, .topbar nav a:hover { color: var(--text); }
+
+/* Sobre */
+.about {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 420px);
+  gap: 5rem;
+  align-items: center;
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 4rem 3rem;
+  min-height: calc(100vh - 90px);
+}
+
+.about h1 {
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 1.1;
+  margin: 0 0 1rem;
+}
+
+.about .lead {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 18px;
+  color: var(--text-secondary);
+  margin: 0 0 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.about p { font-size: 15px; line-height: 1.75; color: #cfc8bb; margin: 0 0 1.25rem; }
+
+.portrait {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  background: var(--bg-raised);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.portrait img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.portrait span {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+/* Contato */
+.contact {
+  min-height: calc(100vh - 90px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3.5rem;
+  padding: 3rem 1.5rem;
+}
+
+.contact h1 {
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+  font-size: 30px;
+  margin: 0;
+}
+
+.contact-icons { display: flex; gap: 6rem; flex-wrap: wrap; justify-content: center; }
+
+.contact-icons a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  color: var(--text);
+  font-size: 14px;
+  text-align: center;
+}
+
+.contact-icons svg { width: 56px; height: 56px; stroke: currentColor; fill: none; stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; }
+.contact-icons small { color: var(--text-secondary); font-size: 13px; }
+.contact-icons a:hover { color: var(--accent); }
+
+@media (max-width: 720px) {
+  .topbar { padding: 1.25rem 1.5rem; }
+  .topbar nav { gap: 18px; }
+  .about { grid-template-columns: 1fr; gap: 2.5rem; padding: 2.5rem 1.5rem; }
+  .contact-icons { gap: 3rem; }
+}
+
+
+/* Barra superior (Sobre e Contato) */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 3rem;
+}
+
+.topbar .name {
+  font-family: 'Fraunces', serif;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.topbar nav {
+  display: flex;
+  gap: 32px;
+  font-size: 14px;
+}
+
+.topbar nav a { color: var(--text-secondary); }
+.topbar nav a.active,
+.topbar nav a:hover { color: var(--text); }
+
+/* Sobre: texto + foto */
+.about-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+  max-width: 1100px;
+  margin: 2rem auto 4rem;
+  padding: 0 3rem;
+}
+
+.about-split h1 {
+  font-family: 'Fraunces', serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 42px;
+  margin: 0 0 1.5rem;
+}
+
+.about-split .divider {
+  border: 0;
+  border-top: 1px solid var(--border);
+  margin: 0 0 1.5rem;
+}
+
+.about-split p {
+  color: var(--text-secondary);
+  margin: 0 0 1.25rem;
+}
+
+.photo-slot {
+  aspect-ratio: 4 / 5;
+  border-radius: 3px;
+  border: 1px solid var(--border);
+  background: url('foto-sobre.jpg') center / cover no-repeat, var(--bg-raised);
+}
+
+/* Contato */
+.contact {
+  min-height: calc(100vh - 110px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6rem;
+  padding: 2rem;
+}
+
+.contact a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  color: var(--text);
+  text-align: center;
+}
+
+.contact a:hover { color: var(--accent); }
+.contact svg { width: 64px; height: 64px; }
+.contact .label { font-size: 15px; }
+.contact .detail { font-size: 13px; color: var(--text-secondary); margin-top: -8px; }
+
+@media (max-width: 720px) {
+  .topbar { flex-direction: column; align-items: flex-start; gap: 1rem; padding: 1.5rem; }
+  .topbar nav { gap: 18px; }
+  .about-split { grid-template-columns: 1fr; gap: 2rem; padding: 0 1.5rem; }
+  .contact { flex-direction: column; gap: 3rem; }
+}
