@@ -1,0 +1,283 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Inter:wght@400;500&display=swap');
+
+:root {
+  --bg: #15130f;
+  --bg-raised: #1c1a15;
+  --text: #ede7dc;
+  --text-secondary: #948c7e;
+  --accent: #b5502a;
+  --border: rgba(237, 231, 220, 0.12);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+a { color: inherit; text-decoration: none; }
+a:hover { color: var(--accent); }
+
+/* ---------- Menu (igual em todas as páginas) ---------- */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 3rem;
+}
+
+.topbar .name {
+  font-family: 'Fraunces', serif;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.topbar nav,
+.hero-nav {
+  display: flex;
+  gap: 32px;
+  font-size: 14px;
+}
+
+.topbar nav a,
+.hero-nav a { color: var(--text); }
+
+.topbar nav a:hover,
+.hero-nav a:hover { color: var(--accent); }
+
+.topbar nav a.active {
+  border-bottom: 1px solid var(--text);
+  padding-bottom: 3px;
+}
+
+/* ---------- Capa (home) ---------- */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 2.5rem 3rem;
+  background:
+    linear-gradient(to top, rgba(10,9,7,0.78) 0%, rgba(10,9,7,0.25) 45%, rgba(10,9,7,0.15) 100%),
+    url('foto-capa.jpg') center / cover no-repeat,
+    radial-gradient(ellipse at 70% 28%, #6b5033 0%, #3a2d20 35%, #1a1612 75%);
+}
+
+.hero-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  justify-content: flex-end;
+  padding: 2rem 3rem;
+}
+
+.hero h1 {
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+  font-size: clamp(56px, 10vw, 128px);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  margin: 0;
+  color: var(--text);
+}
+
+.hero p {
+  margin: 20px 0 0;
+  font-size: 15px;
+  color: #c9c1b3;
+}
+
+/* ---------- Trabalhos: três capas lado a lado ---------- */
+.works {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1400px;
+  margin: 1rem auto 3rem;
+  padding: 0 3rem;
+}
+
+.cover {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 68vh;
+  min-height: 380px;
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.cover img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cover::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 9, 7, 0.4);
+  transition: background 0.3s;
+}
+
+.cover:hover::after { background: rgba(10, 9, 7, 0.15); }
+
+.cover-title {
+  position: relative;
+  z-index: 2;
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+  font-size: 30px;
+  color: var(--text);
+  text-align: center;
+  padding: 0 1rem;
+}
+
+/* ---------- Sobre: texto à esquerda, foto à direita ---------- */
+.about-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+  max-width: 1100px;
+  margin: 2rem auto 4rem;
+  padding: 0 3rem;
+}
+
+.about-split h1 {
+  font-family: 'Fraunces', serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 42px;
+  line-height: 1.15;
+  margin: 0 0 1.5rem;
+}
+
+.about-split .divider {
+  border: 0;
+  border-top: 1px solid var(--border);
+  margin: 0 0 1.5rem;
+}
+
+.about-split p {
+  color: var(--text-secondary);
+  margin: 0 0 1.25rem;
+}
+
+.photo-slot {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  background: var(--bg-raised);
+  border: 1px dashed var(--border);
+  border-radius: 3px;
+  overflow: hidden;
+  color: var(--text-secondary);
+  font-size: 14px;
+  text-align: center;
+}
+
+.photo-slot small { font-size: 12px; opacity: 0.7; }
+
+.photo-slot img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ---------- Contato ---------- */
+.contact {
+  min-height: calc(100vh - 100px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+  padding: 2rem;
+}
+
+.contact a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  color: var(--text);
+  text-align: center;
+}
+
+.contact a:hover { color: var(--accent); }
+.contact svg { width: 44px; height: 44px; }
+.contact .label { font-size: 14px; }
+.contact .detail { font-size: 12px; color: var(--text-secondary); margin-top: -6px; }
+
+/* ---------- Página de projeto ---------- */
+.project {
+  max-width: 1000px;
+  margin: 1rem auto 4rem;
+  padding: 0 3rem;
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.project-header h1 {
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+  font-size: 32px;
+  margin: 0 0 12px;
+}
+
+.project-header p {
+  color: var(--text-secondary);
+  font-size: 15px;
+  max-width: 460px;
+  margin: 0;
+}
+
+.meta { font-size: 13px; color: var(--text-secondary); min-width: 160px; }
+.meta div { margin-bottom: 8px; }
+.meta strong { color: var(--text); display: block; font-weight: 500; }
+
+.photo-series { display: flex; flex-direction: column; gap: 2rem; }
+.photo-series figure { margin: 0; }
+.photo-series img { width: 100%; display: block; border-radius: 3px; }
+.photo-series figcaption { font-size: 13px; color: var(--text-secondary); margin-top: 10px; }
+
+/* ---------- Celular ---------- */
+@media (max-width: 720px) {
+  .topbar { flex-direction: column; align-items: flex-start; gap: 1rem; padding: 1.5rem; }
+  .topbar nav { gap: 20px; }
+  .hero { padding: 1.5rem; }
+  .hero-nav { padding: 1.5rem; gap: 20px; }
+  .works { grid-template-columns: 1fr; padding: 0 1.5rem; }
+  .cover { height: 50vh; }
+  .about-split { grid-template-columns: 1fr; gap: 2rem; padding: 0 1.5rem; }
+  .contact { gap: 2.5rem; }
+  .project { padding: 0 1.5rem; }
+  .project-header { flex-direction: column; }
+}
