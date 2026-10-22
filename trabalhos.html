@@ -5,6 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Trabalhos — Douglas Soares</title>
 <link rel="stylesheet" href="estilo.css">
+<style>
+/* Estilos desta página: três capas verticais, centralizadas */
+.works { grid-template-columns: repeat(3, 1fr); gap: 4rem; max-width: 1180px; min-height: calc(100vh - 100px); margin: 0 auto; padding: 1rem 3rem 3rem; align-content: center; }
+.cover { height: auto; min-height: 0; aspect-ratio: 11 / 16; border-color: rgba(237, 231, 220, 0.18); }
+.cover-title { font-size: 26px; }
+@media (max-width: 720px) {
+  .works { grid-template-columns: 1fr; gap: 2rem; max-width: 380px; min-height: 0; padding: 1rem 1.5rem 2rem; }
+}
+</style>
 </head>
 <body>
 <header class="topbar">
