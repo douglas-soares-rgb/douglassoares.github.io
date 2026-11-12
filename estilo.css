@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Inter:wght@400;500&display=swap');
 
 :root {
-  --bg: #15130f;
-  --bg-raised: #1c1a15;
-  --text: #ede7dc;
-  --text-secondary: #948c7e;
-  --accent: #b5502a;
-  --border: rgba(237, 231, 220, 0.12);
+  --bg: #02110c;
+  --bg-raised: #1b422f;
+  --text: #f3ebd6;
+  --text-secondary: #939585;
+  --accent: #f3ebd6;
+  --border: rgba(243, 235, 214, 0.16);
 }
 
 * { box-sizing: border-box; }
@@ -85,9 +85,9 @@ a:hover { color: var(--accent); }
   justify-content: flex-end;
   padding: 2.5rem 3rem;
   background:
-    linear-gradient(to top, rgba(10,9,7,0.78) 0%, rgba(10,9,7,0.25) 45%, rgba(10,9,7,0.15) 100%),
+    linear-gradient(to top, rgba(2,17,12,0.78) 0%, rgba(2,17,12,0.25) 45%, rgba(2,17,12,0.15) 100%),
     url('foto-capa.jpg') center / cover no-repeat,
-    radial-gradient(ellipse at 70% 28%, #6b5033 0%, #3a2d20 35%, #1a1612 75%);
+    radial-gradient(ellipse at 70% 28%, #1b422f 0%, #0a2419 45%, #02110c 90%);
 }
 
 .hero-nav {
@@ -112,7 +112,7 @@ a:hover { color: var(--accent); }
 .hero p {
   margin: 20px 0 0;
   font-size: 15px;
-  color: #c9c1b3;
+  color: #c9c8b8;
 }
 
 /* ---------- Trabalhos: três capas lado a lado ---------- */
@@ -150,11 +150,11 @@ a:hover { color: var(--accent); }
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(10, 9, 7, 0.4);
+  background: rgba(2, 17, 12, 0.4);
   transition: background 0.3s;
 }
 
-.cover:hover::after { background: rgba(10, 9, 7, 0.15); }
+.cover:hover::after { background: rgba(2, 17, 12, 0.15); }
 
 .cover-title {
   position: relative;
@@ -210,7 +210,7 @@ a:hover { color: var(--accent); }
   border: 1px dashed var(--border);
   border-radius: 3px;
   overflow: hidden;
-  color: var(--text-secondary);
+  color: #c9c8b8;
   font-size: 14px;
   text-align: center;
 }
